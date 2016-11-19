@@ -41,7 +41,7 @@ millipede = base(animal, {"legs": 1000})
 
 human = base(animal, {"legs": 2, "filters": [suited, prep_fn("on"), prep_fn("with")]})
 
-bicycle = {"filters": [prep_fn("riding"), prep_fn("on")]}
+bicycle = {"wheels": 2, "filters": [prep_fn("riding"), prep_fn("on")]}
 pogo_stick = base(bicycle, {"legs": 1})
 
 classes = {
