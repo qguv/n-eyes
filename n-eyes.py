@@ -31,34 +31,35 @@ def prep_fn(prep: str):
 
 snake = { "eyes": 2,
           "noses": 1,
-          "filters": [suited, prep_fn("on"), prep_fn("with"),
-                      prep_fn("riding")]}
+          "filters": [suited, prep_fn("on"), prep_fn("with"), prep_fn("riding")]}
 
 animal = base(snake, {"legs": 4})
-insect = base(animal, {"legs": 6})
-centipede = base(animal, {"legs": 100})
-millipede = base(animal, {"legs": 1000})
+insect = base(snake, {"legs": 6})
+centipede = base(snake, {"legs": 100})
+millipede = base(snake, {"legs": 1000})
 
-human = base(animal, {"legs": 2, "filters": [suited, prep_fn("on"), prep_fn("with")]})
+human = base(snake, {"legs": 2, "filters": [suited, prep_fn("on"), prep_fn("with")]})
 
-bicycle = {"wheels": 2, "filters": [prep_fn("riding"), prep_fn("on")]}
-pogo_stick = base(bicycle, {"legs": 1})
+ridable = {"filters": [prep_fn("riding"), prep_fn("on")]}
+bicycle = base(ridable, {"wheels": 2})
+pogo_stick = base(ridable, {"legs": 1})
 
 classes = {
+    "snake": snake,
+    "pogo stick": pogo_stick,
+    "chicken": human,
+    "old man": human,
+    "guy": human,
     "goat": animal,
     "elephant": animal,
     "cat": animal,
     "dog": animal,
     "lizard": animal,
-    "snake": snake,
     "ant": insect,
     "butterfly": insect,
     "centipede": centipede,
     "millipede": millipede,
-    "chicken": human,
-    "old man": human,
-    "guy": human,
-    "pogo stick": pogo_stick,
+
     "bike": bicycle,
     "bicycle": bicycle,
 }
