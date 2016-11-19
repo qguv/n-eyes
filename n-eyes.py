@@ -39,7 +39,7 @@ insect = base(animal, {"legs": 6})
 centipede = base(animal, {"legs": 100})
 millipede = base(animal, {"legs": 1000})
 
-human = base(animal, {"filters": [suited, prep_fn("on"), prep_fn("with")]})
+human = base(animal, {"legs": 2, "filters": [suited, prep_fn("on"), prep_fn("with")]})
 
 bicycle = {"filters": [prep_fn("riding"), prep_fn("on")]}
 pogo_stick = base(bicycle, {"legs": 1})
@@ -71,6 +71,5 @@ for d in contributors:
     merge(combined, classes[d])
 del combined["filters"]
 
-print("What has", ", ".join([ "{} {}".format(v, k) for k, v in combined.items() ]), end="?\n")
-input()
-print(answer)
+print("Q: What has", ", ".join([ "{} {}".format(v, k) for k, v in combined.items() ]) + "?")
+print("A:", answer.capitalize() + ".")
